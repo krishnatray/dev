@@ -9,6 +9,7 @@ class Ship:
         self.screen_rect = ai_game.screen.get_rect()
 
         self.image = pygame.image.load('ship.bmp')
+        # self.image = pygame.image.load('h.jpg')
         self.rect = self.image.get_rect()
 
         self.rect.midbottom = self.screen_rect.midbottom
@@ -19,6 +20,11 @@ class Ship:
         # Movement flag
         self.moving_right = False
         self.moving_left = False
+    
+    def center_ship(self):
+        """Center the ship on the screen."""
+        self.rect.midbottom = self.screen_rect.midbottom
+        self.x = float(self.rect.x)
 
     def update(self):
         """ Update the ship's position """
